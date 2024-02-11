@@ -1,0 +1,16 @@
+h1{
+    color: rgb(251, 0, 0);
+}
+ul{
+    color: rgb(136, 0, 255);
+    font-size: 1.3em;
+    font-weight: 900;
+}
+#dom-title{
+    color: chartreuse;
+    grid-template-rows: repeat(1fr,3);
+}
+h2{
+    font-size: 2rem;
+    padding-left: 30px;
+}

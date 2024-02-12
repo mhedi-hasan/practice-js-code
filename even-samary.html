@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS DOM Summary</title>
+  </head>
+  <body>
+    <h1>Final DOM Event.</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <h3 id="status">Default Input Text</h3>
+    <input type="text" id="write" />
+    <button id="input-filed">Update</button>
+    <br />
+    <br />
+    <button onclick="onclickHandle()">Onclick Function</button>
+    <button id="handel-add">Handel by addEvenListener</button>
+    <script>
+      // option -->01
+      function onclickHandle() {
+        const handlerStatus = document.getElementById("handler-status");
+        handlerStatus.innerText = "Default Text Button And Change The Text";
+        console.log(handlerStatus);
+      }
+      // option -->02
+      document
+        .getElementById("handel-add")
+        .addEventListener("click", function () {
+          const handelAdd = document.getElementById("handler-status");
+          handelAdd.innerText = " Click And Change addEvenListener";
+          console.log(handelAdd);
+        });
+      //-------Change input value--------
+      document
+        .getElementById("input-filed")
+        .addEventListener("click", function () {
+          const inputFiled = document.getElementById("write");
+          const inputText = inputFiled.value;
+
+          const p = document.getElementById("status");
+          p.innerText = inputText;
+          inputFiled.value = "";
+        });
+    </script>
+  </body>
+</html>

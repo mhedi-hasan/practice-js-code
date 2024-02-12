@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event delegate</title>
+  </head>
+  <body>
+    <h1>Event delegate</h1>
+    <section>
+      <ul style="cursor: pointer;" id="list-container">
+        <li class="item">Bangladesh</li>
+        <li class="item">Pakistan</li>
+        <li class="item">South Africa</li>
+        <li class="item">Sri Lanka</li>
+        <li class="item">Philistine</li>
+        <li class="item">Australia</li>
+      </ul>
+      <button id="btn-add">Add Item</button>
+    </section>
+    <script>
+    //  const items = document.getElementsByClassName("item");
+    //   for(const item of items){
+    //     item.addEventListener('click',function(event){
+    //         event.target.parentNode.removeChild(event.target)
+    //     })
+    // }
+    document.getElementById('list-container').addEventListener('click',function(event){
+        // console.log(event.target)
+        event.target.parentNode.removeChild(event.target);
+    })
+    document.getElementById('btn-add').addEventListener('click',function(){
+        const ulItem=document.getElementById('list-container');
+        const li=document.createElement('li')
+        li.innerText='Bangladesh is nice country.';
+        li.classList.add('item');
+        ulItem.appendChild(li)
+    })
+    </script>
+  </body>
+</html>

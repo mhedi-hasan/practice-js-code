@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Comment Box</title>
+</head>
+<body>
+    <h1>Please Add Your Comment</h1>
+    <div id="first-div">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae fugiat, est placeat quae quisquam odit qui molestias, culpa, ipsa repellendus a. Voluptates vitae et ullam dolor fuga, atque perspiciatis ipsa officia molestias suscipit ad iure beatae eum doloremque culpa doloribus accusamus non fugit rem soluta. Ea repellendus in minus culpa veritatis, delectus! Praesentium!</p>
+        <p>Repellendus dolorem ipsam corrupti quia sequi, atque delectus dolores veniam cum molestias nemo molestiae inventore, sed reprehenderit animi impedit voluptas ipsum at ad quae, amet tempore. Deleniti porro non ipsa delectus, eligendi cupiditate voluptatem iure consequatur reprehenderit architecto ipsam aut eveniet nobis vitae obcaecati voluptate  excepturi voluptatibus.</p>
+        <p>Facere quos in fuga voluptate labore praesentium unde cum adipisci voluptas reiciendis libero, rerum aliquam molestias alias iusto natus reprehenderit dolores odio temporibus! Voluptatum ratione maxime eius veritatis dolorem aut tenetur, quis facilis molestiae! Nisi voluptatem dignissimos tempore molestiae. Temporibus cupiditate sequi natus molestiae a adipisci. Maxime natus iusto sit!</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="70" rows="7"></textarea> <br>
+        <button id="btn-comment" style="padding: 4px 30px; border: 2px solid rgb(183, 167, 222); border-radius: 8px; background-color: antiquewhite; font-size: 1.5rem;">Comment</button>
+    </div>
+    <script>
+        // Step -->01
+        document.getElementById('btn-comment').addEventListener('click',function(){
+            // Step -->02
+            const firstDiv=document.getElementById('new-comment');
+            const inputText=firstDiv.value;
+
+            // Step -->03
+            const commentContainer=document.getElementById('first-div')
+            const p=document.createElement('p');
+            p.innerText=inputText;
+            commentContainer.appendChild(p);
+            firstDiv.value='';
+        })
+    </script>
+</body>
+</html>

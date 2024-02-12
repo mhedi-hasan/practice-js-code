@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+    <style>
+        body{
+            border: 2px solid tomato;
+        }
+        section{
+            border: 2px solid rgb(6, 65, 214);
+        }
+        ul{
+            border: 2px solid rgb(55, 224, 4);
+        }
+        #item-3{
+            border: 2px solid rgb(224, 4, 176);
+        }
+    </style>
+</head>
+<body id="body">
+    <h1>Explore Event Bubble.</h1>
+    <section id="list-container">
+        <ul id="list-ul" style="cursor: pointer;">
+            <li id="item-1">Bangladesh.</li>
+            <li id="item-2">Philistine.</li>
+            <li id="item-3">Pakistan.</li>
+            <li id="item-4">Australia.</li>
+            <li id="item-5">South Africa.</li>
+            <li id="item-6">Sri Lanka.</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('item-3').addEventListener('click',function(){
+            console.log('item-3 Clicked')
+            //stop bubble propagation.
+            event.stopPropagation();
+        })
+        document.getElementById('list-ul').addEventListener('click',function(){
+            console.log('Ul-Clicked')
+        })
+        document.getElementById('list-container').addEventListener('click',function(){
+            console.log('Section-Container-Clicked')
+        })
+        document.getElementById('body').addEventListener('click',function(){
+            console.log('Body-of-the-container-clicked')
+        })
+    </script>
+</body>
+</html>
